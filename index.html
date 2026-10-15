@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title> Заброшки Мурманска </title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            margin: 0;
+            padding:20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff6b35;
+        }
+
+        .menu {
+            display: flex;
+            flex-wrap:wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+            .menu button {
+                padding: 12px 20px;
+                background: #333;
+                color: #fff;
+                border: 2px solid #ff6b35;
+                cursor: pointer;
+                font-size: 16px;
+                border-radius: 5px;
+                transition:0.3s;
+            }
+
+                .menu button:hover {
+                    background: #ff6b35;
+                }
+
+        .section {
+            display: none;
+            max-width:  800px;
+            margin: 0 auto;
+            background: #252525;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+            .section.active {
+                display: block;
+            }
+
+            .section h2 {
+                color: #ff6b35;
+                margin-top:0;
+            }
+
+            .section p {
+                line-height: 1.6;
+            }
+
+        .main-photo {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom:15px;
+            display: block;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content:  center;
+            margin-bottom: 20px;
+        }
+
+            .gallery img {
+                width: 180px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: transform 0.2s ;
+                display: block;
+            }
+
+                .gallery img:hover {
+                    transform: scale(1.05);
+                }
+
+        .submenu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+            .submenu button {
+                padding: 10px 16px;
+                background: #2c2c2c;
+                color: #fff;
+                border: 2px solid #555;
+                cursor: pointer;
+                font-size: 14px;
+                border-radius: 5px;
+                transition: 0.3s;
+            }
+
+                .submenu button:hover {
+                    border-color: #ff6b35;
+                    background: #3a3a3a;
+                }
+
+        .object {
+            display: none;
+        }
+
+            .object.active {
+                display: block;
+            }
+
+        footer {
+            max-width: 800px;
+            margin: 40px auto 0;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #333;
+            color: #888;
+            font-size: 14px;
+        }
+
+            footer .copy {
+                margin-top: 15px;
+                font-size: 12px;
+                color: #555;
+            }
+    </style>
+</head>
+<body>
+
+    <h1>Заброшки Мурманска</h1>
+
+    <div class="menu">
+        <button onclick="showSection('about')">Обо мне</button>
+        <button onclick="showSection('hobby')">Моё увлечение</button>
+        <button onclick="showSection('works')">Моя гордость</button>
+    </div>
+
+    <div id="about" class="section active">
+        <h2>Обо мне</h2>
+        <img class="main-photo" src="" alt="">
+        <p>ФИО: Мурзин Тимофей Алексеевич. Позывные - рыжий, дедушка.</p>
+        <p>Почему я выбрал именно эту тему? Просто так...</p>
+        <p>Я очень хочу посетить различные бункеры, заброшенные больницы и тп</p>
+    </div>
+
+    <div id="hobby" class="section">
+        <h2>Моё увлечение</h2>
+        <p>Интерес от заброшек: Я люблю разрушенные места со своей историей.</p>
+        <p>Подготовка: Нету)</p>
+
+        <div class="submenu">
+            <button onclick="showObject('bolnichka')">Больничный городок</button>
+            <button onclick="showObject('dam')">Нотр-Дам</button>
+            <button onclick="showObject('club')">Бомбоубежище</button>
+        </div>
+
+        <div id="bolnichka" class="object">
+            <h2>Больничный городок</h2>
+            <img class="main-photo" src="img/1.jpg" alt="">
+            <p><b>Описание:</b> В середине 1930-х годов лечебные учреждения перенесли сюда из центра (из района нынешних улиц Сталина, Кольской, Шмидта и Милицейской). Вокруг построили новые корпуса, рядом появились жилые дома — так и сложился городок.</p>
+            <p><b>Опасность:</b> Присутствует, главное не нарываться</p>
+
+            <h3>Фотки</h3>
+            <div class="gallery">
+                <img src="img/2.jpg" alt="Больничный городок" title="Домик">
+                <img src="img/3.jpg" alt="Больничный городок" title="Собакин">
+                <img src="img/7.jpg" alt="Больничный городок" title="Домик куда я зашел">
+                <img src="img/4.jpg" alt="Больничный городок" title="Чо внутри (1)">
+                <img src="img/13.jpg" alt="Больничный городок" title="Чо внутри (2)">
+                <img src="img/14.jpg" alt="Больничный городок" title="Чо внутри (3)">
+                <img src="img/5.jpg" alt="Больничный городок" title="Мое лицо">
+                <img src="img/6.jpg" alt="Больничный городок" title="Там где я провалился">
+                <img src="img/8.jpg" alt="Больничный городок" title="Меня туда не пустили">
+                <img src="img/10.jpg" alt="Больничный городок" title="Домик ломается (1)">
+                <img src="img/12.jpg" alt="Больничный городок" title="Домик ломается (2)">
+                <img src="img/9.jpg" alt="Больничный городок" title="Если кому то надо">
+                <img src="img/11.jpg" alt="Больничный городок" title="Надеюсь никому не надо">
+            </div>
+
+            <h3>Мнение</h3>
+            <p>К сожалению, некоторые из этих домов заселены (я ни в один из таких домов не заходил, по крайней мере, дом, в который я зашел, пустовал). Мне искренне жаль проживающих там людей, ибо там живут приветливые люди, а условия проживания отвратны. Пример приветливости этих людей: первый кто ко мне подошел был мужчина, который спросил: не потерялся ли я?</p>
+        </div>
+
+        <div id="dam" class="object">
+            <h2>Нотр-Дам</h2>
+            <img class="main-photo" src="img/notr13.jpg" alt="" title="">
+            <p><b>Описание:</b> Строительство началось в 1989 году под руководством местной общины христиан-адвентистов седьмого дня. К моменту приостановки работ уже приступили к внутренней отделке. По одной из версий, причиной остановки стали проблемы с грунтовыми водами, которые подмыли фундамент.</p>
+            <p><b>Опасность:</b>НЕТУ!!! Единственное, что неприятно, так это то, что туда придется залазить через окно.</p>
+
+            <h3>Фотки</h3>
+            <div class="gallery">
+                <img src="img/notr10.jpg" alt="Нотр-Дам" title="Как туда попасть)">
+                <img src="img/notr2.jpg" alt="Нотр-Дам" title="Комнатка">
+                <img src="img/notr3.jpg" alt="Нотр-Дам" title="Внутри(1)">
+                <img src="img/notr4.jpg" alt="Нотр-Дам" title="главеый холл">
+                <img src="img/notr6.jpg" alt="Нотр-Дам" title="Билл Авокадо">
+                <img src="img/notr7.jpg" alt="Нотр-Дам" title="2 этаж(1)">
+                <img src="img/notr8.jpg" alt="Нотр-Дам" title="2 этаж(2)">
+                <img src="img/notr9.jpg" alt="Нотр-Дам" title="Место для посиделок">
+                <img src="img/notr1.jpg" alt="Нотр-Дам" title="Вход в храм(реальный)">
+                <img src="img/notr11.jpg" alt="Нотр-Дам" title="Как он выглядит издалека">
+                <img src="img/notr12.jpg" alt="Нотр-Дам" title="Как он выглядит с начала холма">
+                <img src="img/notr14.jpg" alt="Нотр-Дам" title="Я за решеткой">
+                <img src="img/notr15.jpg" alt="Нотр-Дам" title="1000-7">
+            </div>
+
+            <h3>Мнение</h3>
+            <p>Безумно красиво! Впечатления, что я скоро вознесусь...</p>
+        </div>
+
+        <div id="club" class="object">
+            <h2>Бомбоубежище</h2>
+            <p><b>Описание:</b> Во время Великой Отечественной войны мурманский морской торговый порт стал важной целью авианалётов противника. С начала войны возникла необходимость создать капитальное бомбоубежище на территории порта. Проектирование началось в августе 1941 года — планировалось построить подземный объект вместимостью около 70 человек. Однако планы быстро расширились, и уже летом 1942 года решено возвести значительное сооружение на 2000 человек, включающее отдельный командный пункт и инженерные коммуникации.</p>
+            <p><b>Опасность:</b> Как таковой нет, но мне кажется можно встать на гвоздь</p>
+
+            <h3>Фотки</h3>
+            <div class="gallery">
+                <img src="img/bomb1.jpg" alt="Бомбоубежище" title="Я хз чо это(1)">
+                <img src="img/bomb2.jpg" alt="Бомбоубежище" title="Досочка">
+                <img src="img/bomb3.jpg" alt="Бомбоубежище" title="Стенка(1)">
+                <img src="img/bomb5.jpg" alt="Бомбоубежище" title="Гардегроб">
+                <img src="img/bomb6.jpg" alt="Бомбоубежище" title="Какая то панель">
+                <img src="img/bomb7.jpg" alt="Бомбоубежище" title="Стенка(2)">
+                <img src="img/bomb8.jpg" alt="Бомбоубежище" title="Ящик">
+                <img src="img/bomb9.jpg" alt="Бомбоубежище" title="Я хз чо это(2)">
+                <img src="img/bomb10.jpg" alt="Бомбоубежище" title="Комнатка">
+                <img src="img/bomb11.jpg" alt="Бомбоубежище" title="Маргаринчик">
+                <img src="img/bomb12.jpg" alt="Бомбоубежище" title="Мусор">
+                <img src="img/bomb13.jpg" alt="Бомбоубежище" title="Бумажка">
+                <img src="img/bomb14.jpg" alt="Бомбоубежище" title="Документ">
+                <img src="img/bomb16.jpg" alt="Бомбоубежище" title="Дверка">
+                <img src="img/bomb17.jpg" alt="Бомбоубежище" title="Хз что это за прибор">
+                <img src="img/bomb18.jpg" alt="Бомбоубежище" title="Мой сет ап">
+            </div>
+
+            <h3>Мнение</h3>
+            <p>Там холодно, темно, сыро, но атмосфера ужаса прекрасна. Я искренне верил, что на меня полетит летучие мыши</p>
+        </div>
+    </div>
+
+    <div id="works" class="section">
+        <h2>Гордость</h2>
+        <p>То чем я могу гордиться</p>
+
+        <div class="gallery">
+            <img src="img/gordost2.jpg" alt="" title="Моя любимая фотка паспорта">
+            <img src="img/gordost1.jpg" alt="" title="Я рыжый">
+            <img src="img/gordost4.jpg" alt="" title="Я глупая блондинка">
+            <img src="img/gordost3.jpg" alt="" title="Моя работа на Единую Россию">            
+        </div>
+
+        <p>В будущем планирую быть зеленовлаской</p>
+    </div>
+    <script>
+function showSection(id) {
+            document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showObject(id) {
+            document.querySelectorAll('.object').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+}
+    </script>
+
+</body>
+</html>
